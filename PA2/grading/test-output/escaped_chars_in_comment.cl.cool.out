@@ -1,0 +1,9 @@
+'*'
+LONGERROR
+')'
+OBJECTID abc
+LONGERROR
+OBJECTID jkl
+'*'
+')'
+OBJECTID mno

@@ -1,0 +1,30 @@
+<STRING>\n      {
+                          printf("detect newline \n\t\b\f \n");
+                          if( strcmp("\\n",yytext)==0 ){
+                            strBuf<<'\n';
+                            /*printf("\\n is this esc newline?\n");*/
+                          }else if(strcmp("\\t",yytext)==0){
+                            strBuf<<'\t';
+                          }else if(strcmp("\\b",yytext)==0){
+                            strBuf<<'\b';
+                          }else if(strcmp("\\f",yytext)==0){
+                            strBuf<<'\f';
+                          }
+                 /*printf("string const backslash n or t detected:%s \n",yytext);*/
+                  /*std::cout<<"strBuf:"<<strBuf.str()<<"\n";*/
+                }
+
+
+
+<STRING>\\[^ntbf]       {
+                          printf("match backslash:%s\n",yytext);
+                          strBuf<<yytext[1];
+                        }
+
+<STRING>"n"|"t"|"b"|"f" {
+                  printf("detected n,t,b,or f char,%s\n",yytext);
+                  strBuf<<yytext;
+                }
+
+
+
