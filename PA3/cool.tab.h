@@ -117,7 +117,7 @@ typedef union YYSTYPE
       Case case_;
       Cases cases;
       Expression expression;
-      Expressions expressions;
+      Expressions expressions; /*should be list of experssions*/
       char *error_msg;
     
 
